@@ -86,8 +86,17 @@
 			<version>${junit-jupiter-version}</version>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
 
+	</dependencies>
+	<repositories>
+		<repository>
+			<id>central</id>
+			<url>https://repo.maven.apache.org/maven2</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 	<build>
 		<plugins>
 			<plugin>
@@ -128,5 +137,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

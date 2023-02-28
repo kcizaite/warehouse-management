@@ -9,5 +9,4 @@ public class WearhouseManagementSystemApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(WearhouseManagementSystemApplication.class, args);
 	}
-
 }
