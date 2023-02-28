@@ -1,35 +1,22 @@
 package lt.techin.karolina.wearhousemanagementsystem.inventories;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-@Entity
-public class Inventory {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+public class InventoryDto {
     private Long id;
-    @NotBlank
+
     private String name;
-    @NotBlank
+
     private int weight;
-    @NotBlank
-    // TODO skaicius nuo 1 iki 40
     private int sector;
-    @CreatedDate
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime createdDate;
 
-    @PrePersist
-    public void prePersist() {
-        createdDate = LocalDateTime.now();
-    }
-
-    public Inventory() {
+    public InventoryDto() {
     }
 
     public Long getId() {
@@ -76,8 +63,8 @@ public class Inventory {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Inventory inventory = (Inventory) o;
-        return weight == inventory.weight && sector == inventory.sector && Objects.equals(id, inventory.id) && Objects.equals(name, inventory.name) && Objects.equals(createdDate, inventory.createdDate);
+        InventoryDto that = (InventoryDto) o;
+        return weight == that.weight && sector == that.sector && Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(createdDate, that.createdDate);
     }
 
     @Override
@@ -87,7 +74,7 @@ public class Inventory {
 
     @Override
     public String toString() {
-        return "Inventory{" +
+        return "InventoryDto{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", weight=" + weight +

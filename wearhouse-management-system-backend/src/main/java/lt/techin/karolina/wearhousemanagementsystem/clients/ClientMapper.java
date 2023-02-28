@@ -16,14 +16,14 @@ public class ClientMapper {
 
     public static Client toClient(ClientDto clientDto){
         var client = new Client();
-        client.setId(client.getId());
-        client.setName(client.getName());
-        client.setSurname(client.getSurname());
-        client.setBirthdate(client.getBirthdate());
-        client.setPhoneNumber(client.getPhoneNumber());
-        client.setType(client.getType());
-        client.setInventory(client.getInventory());
-        client.setCreatedDate(client.getCreatedDate());
+        client.setId(clientDto.getId());
+        client.setName(clientDto.getName());
+        client.setSurname(clientDto.getSurname());
+        client.setBirthdate(clientDto.getBirthdate());
+        client.setPhoneNumber(clientDto.getPhoneNumber());
+        client.setType(clientDto.getType());
+        client.setInventory(clientDto.getInventory());
+        client.setCreatedDate(clientDto.getCreatedDate());
         return client;
     }
 }

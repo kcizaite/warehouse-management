@@ -8,9 +8,7 @@ import java.util.List;
 @Service
 public class ClientService {
     private ClientRepository clientRepository;
-
     @Autowired
-
     public ClientService(ClientRepository clientRepository) {
         this.clientRepository = clientRepository;
     }
